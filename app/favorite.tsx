@@ -99,7 +99,7 @@ const Favorite = () => {
         renderItem={({ item }) => (
           <TouchableOpacity
             className={`h-14  rounded-xl border border-gray-200 flex-row items-center justify-between px-3 flex-1 ${
-              isFavorite(item.id) ? "bg-green-700" : "bg-gray-100"
+              isFavorite(item.id) ? "bg-teal-600" : "bg-gray-100"
             }`}
             onPress={() => handleClick(item)}
           >
