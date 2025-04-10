@@ -4,8 +4,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Feather, Ionicons } from "@expo/vector-icons";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
 
 const Home = () => {
+  const { user } = useSelector((state: RootState) => state.user);
+
   return (
     <>
       <StatusBar backgroundColor="#c11c56" style="light" />
@@ -15,7 +19,7 @@ const Home = () => {
             <SafeAreaView className="bg-[#c11c56] relative h-32 pt-3">
               <View className="flex-row items-center justify-between px-5">
                 <Text className="text-white font-semibold text-base font-[Poppins]">
-                  Hi, Evy Dwi
+                  Hi, {user.name}
                 </Text>
                 <View className="flex-row gap-3">
                   <Link href={"/favorite"}>
